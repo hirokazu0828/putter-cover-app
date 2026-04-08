@@ -3,6 +3,7 @@ import Step1 from './components/Step1';
 import Step2 from './components/Step2';
 import Step3 from './components/Step3';
 import Step4 from './components/Step4';
+import SampleBook from './components/SampleBook/SampleBook';
 import { initialSpecData } from './types';
 import type { SpecData } from './types';
 import './index.css';
@@ -16,6 +17,7 @@ function App() {
     { id: 2, name: 'STEP2: 組み合わせ提案' },
     { id: 3, name: 'STEP3: デザイン化' },
     { id: 4, name: 'STEP4: 最終仕様書' },
+    { id: 5, name: 'サンプル帳' },
   ];
 
   const handleNext = () => {
@@ -80,6 +82,9 @@ function App() {
           )}
           {currentStep === 4 && (
             <Step4 data={specData} updateData={updateData} onReset={resetData} onBack={handleBack} />
+          )}
+          {currentStep === 5 && (
+            <SampleBook />
           )}
         </div>
       </main>
